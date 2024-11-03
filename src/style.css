@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #0f0f0f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+canvas {
+    border: 2px solid #333;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: block;
+}
+
+.trick-text {
+    position: fixed;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ff9500;
+    animation: floatUp 1s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+
+.game-ui {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    pointer-events: none;
+}
+
+.score {
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.multiplier {
+    font-size: 20px;
+    color: #ff9500;
+    margin-top: 5px;
+}
+
+.trick-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    font-weight: bold;
+    color: #ff9500;
+    text-shadow: 0 0 10px rgba(255, 149, 0, 0.5);
+    opacity: 0;
+}
+
+@keyframes trickText {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.achievement {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: 2px solid #FFD700;
+    color: white;
+    text-align: center;
+    animation: achievementPopup 3s ease-in-out;
+}
+
+.achievement-title {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.achievement-points {
+    color: #FFD700;
+    font-size: 18px;
+}
+
+@keyframes achievementPopup {
+    0% { transform: translate(-50%, -200%); opacity: 0; }
+    20% { transform: translate(-50%, -50%); opacity: 1; }
+    80% { transform: translate(-50%, -50%); opacity: 1; }
+    100% { transform: translate(-50%, -200%); opacity: 0; }
+}
+
+.setup-instructions {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+}
+
+.setup-instructions p {
+    margin: 10px 0;
+    font-size: 16px;
+}
