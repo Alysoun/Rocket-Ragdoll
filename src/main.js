@@ -1,13 +1,16 @@
-import { Game } from './game/Game';
+import { Game } from './game/core/Game.js';
 import './style.css';
 
-document.querySelector('#app').innerHTML = `
-  <canvas id="game-canvas" width="800" height="600"></canvas>
-`;
-
-const canvas = document.querySelector('#game-canvas');
-const game = new Game(canvas);
-game.start();
-
-// Add this for debugging
-console.log('Game initialized');
+document.addEventListener('DOMContentLoaded', () => {
+    // Create the canvas element
+    const canvas = document.createElement('canvas');
+    canvas.id = 'gameCanvas';
+    document.body.appendChild(canvas);
+    
+    // Set canvas dimensions
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    // Initialize game
+    const game = new Game(canvas);
+});
